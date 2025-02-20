@@ -1,0 +1,11 @@
+Sector,Subsectors,,,,,,,,,,,,,
+Agriculture,Cropland fires,Enteric fermentation cattle feedlots,Enteric fermentation cattle pasture,Enteric fermentation other,Manure applied to soils,Manure left on pasture cattle,Manure management cattle operations,Manure management other,Crop residues,Other agricultural soil emissions,Rice cultivation,Synthetic fertilizer application,,
+Buildings,Other onsite fuel usage,Non-residential onsite fuel usage,Residential onsite fuel usage,,,,,,,,,,,
+Fluorinated gases,Fluorinated gases,,,,,,,,,,,,,
+Fossil fuel operations,Coal mining,Oil and gas production,Oil and gas refining,Other fossil fuel operations,Solid fuel transformation,Oil and gas transport,,,,,,,,
+Forestry and Land Use,Net Forest & Mangrove Carbon Stock Change - living biomass,Net Grassland Carbon Stock Change - living biomass,Net Wetland Net Carbon Stock Change - living biomass,Water reservoirs,,,,,,,,,,
+Manufacturing,Aluminum,Cement,Chemicals,Glass,Petrochemical steam cracking,Pulp and paper,Iron and steel,Other chemicals,Lime,Other manufacturing,Food beverages and tobacco,Other metals,Wood and wood products,Textiles leather and apparel
+Mineral Extraction,Bauxite mining,Copper mining,Iron mining,Rock quarrying,Sand quarrying,Other mining and quarrying,,,,,,,,
+Power,Electricity generation,Other energy use,Heat plants,,,,,,,,,,,
+Transportation,Domestic aviation,Domestic shipping,International aviation,International shipping,Other transport,Railways,Road transportation,,,,,,,
+Waste,Industrial wastewater treatment and discharge,Biological treatment of solid waste,Incineration and open burning of waste,Solid waste disposal,Domestic wastewater treatment and discharge,,,,,,,,,
