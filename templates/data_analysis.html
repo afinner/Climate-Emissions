@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Analysis</title>
+    <link href="{{ url_for('static', filename='styleIndex.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li> <a href="/"> Home Page </a> </li>
+            <li> <a href="/data"> Data Analysis </a> </li>
+            <li> <a href="/g_a_r"> Graphs and Results </a> </li>
+            <li> <a href="/conc"> Conclusions</a> </li>
+        </ul>
+    </div>
+    <div class="main">
+        <section class="intro-section">
+            <h1>Data Analysis Page</h1>
+            <p>Welcome to the data analysis page. This section contains an overview of the data analysis process, including how the data was collected, processed, and stored. We also provide references and links for further reading.</p>
+        </section>
+        
+        <section class="data-collection">
+            <h2>Data Collection</h2>
+            <p>Information about how the data was collected, including sources and methods.</p>
+            <div class="image-container">
+                <a href="Data source">
+                    <img src="/static/image1.png" alt="Image 1">
+                </a>
+                <a href="Data source">
+                    <img src="/static/image2.png" alt="Image 2">
+                </a>
+            </div>
+        </section>
+        
+        <section class="data-processing">
+            <h2>Data Processing</h2>
+            <p>Description of the steps taken to process the collected data.</p>
+        </section>
+        
+        <section class="data-storage">
+            <h2>Data Storage</h2>
+            <p>Details on where and how the data is stored.</p>
+        </section>
+        
+        <section class="references">
+            <h2>References</h2>
+            <p>Sources of data and any relevant links for further reading.</p>
+        </section>
+    </div>
+    
+    <!-- <footer>
+        <a href="https://example.com/link1">Link 1</a>
+        <a href="https://example.com/link2">Link 2</a>
+        <img src="{{ url_for('static', filename='eu_flag.png') }}" alt="EU Flag">
+    </footer> -->
+</body>
+</html>

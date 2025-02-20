@@ -1,0 +1,257 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title> ALT - Project Report</title>
+      <link href="{{ url_for('static', filename='style1.css') }}" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul1>
+      <li1> <a href="/"> Home Page </a> </li1>
+      <li1> <a href="/data"> Data Analysis </a> </li1>
+      <li1> <a href="/g_a_r"> Graphs and Results </a> </li1>
+      <li1> <a href="/conc"> Conclusions</a> </li1>
+    </ul1>
+    <div class='wrapper'>
+      <br>
+      <br>
+      <h1>Recommendations Page</h1>
+      <p>Welcome to the recommendations and conclusions page. Please enter the country, followed by the target year, followed by whether you want to see the graphs or not. (Intro and instructions) </p>
+      <br>
+
+      <br>
+      Country = <input type="string" id="country">
+      Target Year = <input type="int" id="year">
+      <select id="load_graphs">
+        <option value="True">Yes</option>
+        <option value="False">No</option>
+      </select>
+      <button class='generate_graph'>Generate Projections Analysis</button>
+      <br>
+      <div class='result1'></div>
+      <div class='resultComment'></div> -->
+      <!-- Country1 = <input type="string" id="country"> -->
+      <!-- <button class='generate_bar'>Generate Sector Analysis</button>
+      <div class='result2'></div>
+      <div class='resultSector'></div>
+    </div>
+  
+  </body>
+  <script>
+    $('.wrapper').on('click', '.generate_graph', function(){
+      var c = $("#country").val();
+      var year = $("#year").val();
+      var loadGraphs = $("#load_graphs").val() === "True";
+      if (loadGraphs) {
+        event.preventDefault();
+          $.ajax({
+          url: "/generate_graph",
+          type: "get",
+          data: {c: c, year: year},
+          success: function(response) {
+            $(".result1").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+        },
+        });
+      }else {
+        $(".result1").empty();
+      } 
+     });
+     $('.wrapper').on('click', '.generate_graph', function(){
+      var c = $("#country").val();
+      var year = $("#year").val();
+      event.preventDefault();
+        $.ajax({
+         url: "/conc1",
+         type: "get",
+         data: {c: c, year: year},
+         success: function(response) {
+           $(".resultComment").html('<p>'+response.result.toString()+'</p>');
+        },
+        });
+     });
+     $(document).ready(function(){
+     $('.wrapper').on('click', '.generate_bar', function(){
+        var c = $("#country").val();
+        var loadGraphs = $("#load_graphs").val() === "True";
+        if (loadGraphs) {
+          $.ajax({
+          url: "/calculate_result",
+          type: "get",
+          data: {c: c},
+          success: function(response) {
+            $(".result2").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+          },
+          });
+        }else {
+        $(".result2").empty();
+      }
+      });  
+    });
+    $('.wrapper').on('click', '.generate_bar', function(){
+        var c = $("#country").val();
+        $.ajax({
+         url: "/calculate_sector",
+         type: "get",
+         data: {c: c},
+         success: function(response) {
+          $(".resultSector").html('<p>'+response.result.toString()+'</p>');
+        },
+        });
+     });
+  </script>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ALT - Project Report</title>
+    <link href="{{ url_for('static', filename='style3.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <ul1>
+        <li1> <a href="/"> Home Page </a> </li1>
+        <li1> <a href="/data"> Data Analysis </a> </li1>
+        <li1> <a href="/g_a_r"> Graphs and Results </a> </li1>
+        <li1> <a href="/conc"> Conclusions</a> </li1>
+    </ul1>
+  </div>
+    <div class='wrapper'>
+        <br>
+        <br>
+        <h1>Recommendations Page</h1>
+        <p>Welcome to the recommendations and conclusions page. Please enter the country, followed by the target year, followed by whether you want to see the graphs or not. (Intro and instructions)</p>
+        <br>
+        <br>
+        Country = <input type="string" id="country">
+        Target Year = <input type="int" id="year">
+        <select id="load_graphs">
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select>
+        <br>
+        <button class='generate_graph'>Generate Projections Analysis</button>
+        <br>
+        <div class='result1'></div>
+        <div class='resultComment'></div>
+        <button class='generate_bar'>Generate Sector Analysis</button>
+        <div class='result2'></div>
+        <div class='resultSector'></div>
+    </div> -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ALT - Project Report</title>
+    <link href="{{ url_for('static', filename='styleIndex.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <ul1>
+        <li1> <a href="/"> Home Page </a> </li1>
+        <li1> <a href="/data"> Data Analysis </a> </li1>
+        <li1> <a href="/g_a_r"> Graphs and Results </a> </li1>
+        <li1> <a href="/conc"> Conclusions</a> </li1>
+    </ul1>
+  </div>
+</div>
+<div class="main">
+    <section class="intro-section">
+        <h1>Recommendations Page</h1>
+        <p>Welcome to the recommendations and conclusions page. Please enter the country, followed by the target year, followed by whether you want to see the graphs or not. (Instructions of how to access graphs)</p>
+    </section>
+    <div class='wrapper'>
+        <br>
+        <br>
+        Country = <input type="string" id="country">
+        Target Year = <input type="int" id="year">
+        <select id="load_graphs">
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select>
+        <br>
+        <button class='generate_graph'>Generate Projections Analysis</button>
+        <br>
+        <div class='result1'></div>
+        <section class="projections">
+          <h2>Projections</h2>
+          <div class='resultComment'></div>
+      </section>
+        <button class='generate_bar'>Generate Sector Analysis</button>
+        <div class='result2'></div>
+        <section class="sectors">
+          <h2>Sectors</h2>
+          <div class='resultSector'></div>
+      </section>
+        <section class="conclusion">
+          <h2>Conclusion</h2>
+          <p>Closing remarks and encouragement to take action.</p>
+        </section>
+    </div>
+</div>
+   
+    <script>
+      $('.wrapper').on('click', '.generate_graph', function(){
+        var c = $("#country").val();
+        var year = $("#year").val();
+        var loadGraphs = $("#load_graphs").val() === "True";
+        if (loadGraphs) {
+          event.preventDefault();
+            $.ajax({
+            url: "/generate_graph",
+            type: "get",
+            data: {c: c, year: year},
+            success: function(response) {
+              $(".result1").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+          },
+          });
+        }else {
+          $(".result1").empty();
+        } 
+       });
+       $('.wrapper').on('click', '.generate_graph', function(){
+        var c = $("#country").val();
+        var year = $("#year").val();
+        event.preventDefault();
+          $.ajax({
+           url: "/conc1",
+           type: "get",
+           data: {c: c, year: year},
+           success: function(response) {
+             $(".resultComment").html('<p>'+response.result.toString()+'</p>');
+          },
+          });
+       });
+       $(document).ready(function(){
+       $('.wrapper').on('click', '.generate_bar', function(){
+          var c = $("#country").val();
+          var loadGraphs = $("#load_graphs").val() === "True";
+          if (loadGraphs) {
+            $.ajax({
+            url: "/calculate_result",
+            type: "get",
+            data: {c: c},
+            success: function(response) {
+              $(".result2").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+            },
+            });
+          }else {
+          $(".result2").empty();
+        }
+        });  
+      });
+      $('.wrapper').on('click', '.generate_bar', function(){
+          var c = $("#country").val();
+          $.ajax({
+           url: "/calculate_sector",
+           type: "get",
+           data: {c: c},
+           success: function(response) {
+            $(".resultSector").html('<p>'+response.result.toString()+'</p>');
+          },
+          });
+       });
+    </script>
+    
+  </body>
+</html>

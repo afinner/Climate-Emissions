@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LC Project 2025</title>
+    <link href="{{ url_for('static', filename='styleIndex.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li> <a href="/"> Home Page </a> </li>
+            <li> <a href="/data"> Data Analysis </a> </li>
+            <li> <a href="/g_a_r"> Graphs and Results </a> </li>
+            <li> <a href="/conc"> Conclusions</a> </li>
+        </ul>
+    </div>
+    <div class="main">
+        <section class="welcome-section">
+            <h1>Welcome to the LC Project 2025</h1>
+            <p>The purpose of this project is to analyze and present CO2 emissions data in the EU. Explore the data, graphs, and conclusions to understand the impact and trends in CO2 emissions.</p>
+        </section>
+        
+        <section class="nav-panel">
+            <h2>Quick Links</h2>
+            <div class="links">
+                <a href="/data">Data Analysis</a>
+                <a href="/g_a_r">Graphs and Results</a>
+                <a href="/conc">Recommendations</a>
+            </div>
+        </section>
+        
+        <section class="featured-image">
+            <h2>Featured Image</h2>
+            <div class="image-container">
+                <img src="/static/co2_emissions_eu.png" alt="CO2 Emissions in the EU">
+            </div>
+        </section>
+        
+        <section class="project-details">
+            <h3>The Project</h3>
+            <p>For more information on the data analysis, visit the <a href="/data">Data Analysis page</a>.</p>
+            <h3>Code Structure</h3>
+            <p>Explore the structure and details of the code used in this project.</p>
+            <div class="image-container">
+                <img src="/static/code_snippet.png" alt="Code Snippet">
+                <img src="/static/example_graph.png" alt="Example Graph">
+            </div>
+            <p>See more graphs on the <a href="/g_a_r">Graphs and Results page</a>.</p>
+        </section>
+    </div>
+    
+    <!-- <footer>
+        <a href="https://example.com/link1">Link 1</a>
+        <a href="https://example.com/link2">Link 2</a>
+        <img src="{{ url_for('static', filename='eu_flag.png') }}" alt="EU Flag">
+    </footer> -->
+</body>
+</html>

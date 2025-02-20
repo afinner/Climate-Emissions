@@ -1,0 +1,440 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Project Report</title>
+      <link href="{{ url_for('static', filename='style1.css') }}" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <style>
+        th { cursor: pointer; }
+      </style>
+  </head>
+  <body>
+    <ul1>
+      <li1> <a href="/"> Home Page </a> </li1>
+      <li1> <a href="/data"> Data Analysis </a> </li1>
+      <li1> <a href="/g_a_r"> Graphs and Results </a> </li1>
+      <li1> <a href="/conc"> Conclusions</a> </li1>
+    </ul1>
+    <br>
+    <h1>Graphs and Results page</h1>
+    <p>Welcome to the graphs and results page, this contains information about the data and my findings as well as
+      displaying the information in an easily accesible way. The first graphs contain information about the EU statistics overall while the next graphs require you to select a country to see them.
+    </p> -->
+    <!-- <iframe src="emissions.html" width="100%" height="500" style="border:none;"></iframe>
+    <br> -->
+    <!-- <iframe src="animation.html" width="100%" height="500" style="border:none;"></iframe>
+    <br>
+   
+    <table>
+      <th>Gas emissions by country</th>  
+      <tr>
+        <td width="25%">
+          <img src="/static/emissions_by_country_chart.png" alt="example graph">
+        </td>
+        <td width="75%">
+          <img src="/static/co2_gdp_comparison.png" alt="example graph">
+        </td>
+      </tr>
+    </table>
+    <div class='wrapper'>
+      <table>        
+        <tr>
+            <td width="20%">
+            Gas: 
+            <select id="gas_select">
+              <option value="ch4">CH4 - (Methane)</option>
+              <option value="co2">CO2 - (Carbon Dioxide)</option>
+              <option value="n2o">N2O - (Nitric Oxide)</option>
+            </select>
+            </td><td width="10%">
+            Year: 
+            <select id="year_select">
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+            </select>
+            </td><td width="10%">
+            <button class='get_result'>Submit</button>
+            </td>
+        </tr>
+      </table>
+      <table>        
+        <tr>
+          <td width="25%">
+            <div class='resultTable'></div>
+          </td>
+          <td width="75%">
+            <div class='result'></div>
+          </td>
+        </tr>
+      </table>
+    </div>  -->
+    <!-- <p>
+      Here are some static graphs as well:
+      <br>
+      <img src="/static/emissions_by_country_chart.png" alt="example graph">
+      <br>
+      <img src="/static/co2_gdp_comparison.png" alt="example graph">
+    </p> -->
+    
+    <!-- <table>
+      <tr>
+          <th>Country</th>
+          <th>CO2 Emissions</th>
+          <th>Emissions per capita</th>
+      </tr>
+      {% for country, emission, capita  in combined_list %}
+      <tr>
+          <td>{{ country }}</td>
+          <td>{{ emission }}</td>
+          <td>{{ capita }}</td>
+      </tr>
+      {% endfor %}
+    </table> -->
+  
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.wrapper').on('click', '.get_result', function(){
+          var gas = $("#gas_select").val();
+          var year = $("#year_select").val();
+          event.preventDefault();
+          $.ajax({
+            url: "/generate_pie",
+            type: "get",
+            data: {gas: gas, year: year},
+            success: function(response) {
+              $(".result").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+            },
+          });
+
+          $.ajax({
+            url: "/g_a_r1",
+            type: "get",
+            data: {year: year, gas: gas},
+            success: function(response) {
+              var table = '<table><tr><th>Country</th><th>Emissions</th><th>Emissions per capita</th></tr>';
+              for (var i = 0; i < response.length; i++) {
+                table += '<tr><td>' + response[i][0] + '</td><td>' + response[i][1] + '</td><td>' + response[i][2] + '</td></tr>';
+              }
+              table += '</table>';
+              $(".resultTable").html(table);
+            },
+            error: function(xhr, status, error) {
+              console.log('Error: ' + error);
+            }
+          });
+        });
+      });
+    </script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.wrapper').on('click', '.get_result', function(){
+          var gas = $("#gas_select").val();
+          var year = $("#year_select").val();
+          var sort_key = "emissions";  // Default sort key
+          event.preventDefault();
+          loadTable(gas, year, sort_key);
+          
+          $.ajax({
+            url: "/generate_pie",
+            type: "get",
+            data: {gas: gas, year: year},
+            success: function(response) {
+              $(".result").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+            },
+          });
+        });
+  
+        function loadTable(gas, year, sort_key) {
+          $.ajax({
+            url: "/g_a_r1",
+            type: "get",
+            data: {year: year, gas: gas, sort_key: sort_key},
+            success: function(response) {
+              var table = '<table><tr><th data-sort="countries">Country</th><th data-sort="emissions">CO2 Emissions</th><th data-sort="capita">Emissions per capita</th></tr>';
+              for (var i = 0; i < response.length; i++) {
+                table += '<tr><td>' + response[i][0] + '</td><td>' + response[i][1] + '</td><td>' + response[i][2] + '</td></tr>';
+              }
+              table += '</table>';
+              $(".resultTable").html(table);
+            },
+            error: function(xhr, status, error) {
+              console.log('Error: ' + error);
+            }
+          });
+        }
+  
+        // Event delegation for sorting
+        $('.resultTable').on('click', 'th', function() {
+          var gas = $("#gas_select").val();
+          var year = $("#year_select").val();
+          var sort_key = $(this).data('sort');
+          loadTable(gas, year, sort_key);
+        });
+      });
+    </script> -->
+  <!-- </body> 
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en"> 
+  <head> 
+    <title>Project Report</title> 
+    <link href="{{ url_for('static', filename='style3.css') }}" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+  </head> 
+  <body> 
+    <div class="navbar"> 
+      <ul1> 
+        <li1> <a href="/"> Home Page </a> </li1> 
+        <li1> <a href="/data"> Data Analysis </a> </li1> 
+        <li1> <a href="/g_a_r"> Graphs and Results </a> </li1> 
+        <li1> <a href="/conc"> Conclusions</a> </li1> 
+      </ul1> 
+    </div> 
+    <br> 
+    <h1>Graphs and Results Page</h1> 
+    <p>Welcome to the graphs and results page. This page contains information about the data and findings, displayed in an easily accessible way. The first graphs contain information about EU statistics overall, while the next graphs require you to select a country to see them.</p> 
+    <br> 
+    <iframe src="animation.html" width="100%" height="500" style="border:none;"></iframe> 
+    <br> 
+    <table> 
+      <thead> 
+        <tr> 
+          <th colspan="2">Gas emissions by country</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr> 
+          <td width="35%"> 
+            <img src="/static/emissions_by_country_chart.png" alt="example graph" style="width:100%;"> 
+          </td> 
+          <td width="65%"> 
+            <img src="/static/co2_gdp_comparison.png" alt="example graph" style="width:100%;"> 
+          </td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class='wrapper'> 
+      <table> 
+        <tr> 
+          <td width="20%"> 
+            Gas: <select id="gas_select"> 
+              <option value="ch4">CH4 - (Methane)</option> 
+              <option value="co2">CO2 - (Carbon Dioxide)</option> 
+              <option value="n2o">N2O - (Nitric Oxide)</option> </select> 
+            </td> 
+            <td width="10%"> 
+              Year: <select id="year_select"> 
+                <option value="2023">2023</option> 
+                <option value="2022">2022</option> 
+                <option value="2021">2021</option> 
+                <option value="2020">2020</option> 
+                <option value="2019">2019</option> 
+                <option value="2018">2018</option> 
+                <option value="2017">2017</option> 
+                <option value="2016">2016</option> 
+                <option value="2015">2015</option> 
+              </select> 
+            </td> 
+            <td width="10%"> 
+              <button class='get_result'>Submit</button> 
+            </td> 
+            <td width="50%"></td> 
+          </tr> 
+        </table> 
+        <table> 
+          <tr> 
+            <td width="25%"> 
+              <div class='resultTable'></div> 
+            </td> <td width="75%"> 
+              <div class='result'></div> 
+            </td> 
+          </tr> 
+        </table> 
+      </div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Report</title>
+    <link href="{{ url_for('static', filename='styleIndex.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <ul1>
+        <li1> <a href="/"> Home Page </a> </li1>
+        <li1> <a href="/data"> Data Analysis </a> </li1>
+        <li1> <a href="/g_a_r"> Graphs and Results </a> </li1>
+        <li1> <a href="/conc"> Conclusions</a> </li1>
+    </ul1>
+  </div>
+    <br>
+    
+      <h1>Graphs and Results Page</h1>
+      
+    <div class="main">
+      <section class="instructions">
+        <h2>Instructions</h2>
+        <p>Use the dropdown menus to select the gas type and year for the data you want to view. Click the "Submit" button to generate the results.</p>
+        <p>Welcome to the graphs and results page. Here you can explore interactive graphs displaying various statistics. Use the filters to set date ranges, select countries/regions, and choose greenhouse gas types to customize the data visualizations.</p>
+      </section>
+      <iframe src="animation.html" width="100%" height="500" style="border:none;"></iframe>
+      <br>
+      <table>
+          <thead>
+              <tr>
+                  <th colspan="2">Gas emissions by country</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td width="35%">
+                      <img src="/static/emissions_by_country_chart.png" alt="example graph" style="width:100%;">
+                  </td>
+                  <td width="65%">
+                      <img src="/static/co2_gdp_comparison.png" alt="example graph" style="width:100%;">
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    
+      <div class='wrapper'>
+          <table>        
+              <tr>
+                  <td width="20%">
+                      Gas: 
+                      <select id="gas_select">
+                          <option value="ch4">CH4 - (Methane)</option>
+                          <option value="co2">CO2 - (Carbon Dioxide)</option>
+                          <option value="n2o">N2O - (Nitric Oxide)</option>
+                      </select>
+                  </td>
+                  <td width="10%">
+                      Year: 
+                      <select id="year_select">
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                          <option value="2021">2021</option>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                      </select>
+                  </td>
+                  <td width="10%">
+                      <button class='get_result'>Submit</button>
+                  </td>
+                  <td width="50%"></td>
+            </tr>
+          </table>
+          <table>        
+              <tr>
+                  <td width="25%">
+                      <div class='resultTable'></div>
+                  </td>
+                  <td width="75%">
+                      <div class='result'></div>
+                  </td>
+              </tr>
+          </table>
+          <section class="analysis-section">
+            <h2>Analysis</h2>
+            <p>Interpretation of the displayed graphs' results.</p>
+          </section>
+      </div>
+    </div>
+      
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script>
+        $(document).ready(function(){
+            $('.wrapper').on('click', '.get_result', function(){
+                var gas = $("#gas_select").val();
+                var year = $("#year_select").val();
+                event.preventDefault();
+                $.ajax({
+                    url: "/generate_pie",
+                    type: "get",
+                    data: {gas: gas, year: year},
+                    success: function(response) {
+                        $(".result").html('<iframe src="'+response.result.toString()+'" width="100%" height="900" style="border:none;"></iframe>');
+                    },
+                });
+
+                $.ajax({
+                    url: "/g_a_r1",
+                    type: "get",
+                    data: {year: year, gas: gas},
+                    success: function(response) {
+                        var table = '<table><tr><th>Country</th><th>Emissions</th><th>Emissions per capita</th></tr>';
+                        for (var i = 0; i < response.length; i++) {
+                            table += '<tr><td>' + response[i][0] + '</td><td>' + response[i][1] + '</td><td>' + response[i][2] + '</td></tr>';
+                        }
+                        table += '</table>';
+                        $(".resultTable").html(table);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Error: ' + error);
+                    }
+                });
+            });
+        });
+    </script> -->
+    <script>
+      $(document).ready(function(){
+        $('.wrapper').on('click', '.get_result', function(){
+          var gas = $("#gas_select").val();
+          var year = $("#year_select").val();
+          var sort_key = "emissions";  // Default sort key
+          event.preventDefault();
+          loadTable(gas, year, sort_key);
+          
+          $.ajax({
+            url: "/generate_pie",
+            type: "get",
+            data: {gas: gas, year: year},
+            success: function(response) {
+              $(".result").html('<iframe src="'+response.result.toString()+'" width="100%" height="500" style="border:none;"></iframe>');
+            },
+          });
+        });
+  
+        function loadTable(gas, year, sort_key) {
+          $.ajax({
+            url: "/g_a_r1",
+            type: "get",
+            data: {year: year, gas: gas, sort_key: sort_key},
+            success: function(response) {
+              var table = '<table><tr><th data-sort="countries">Country</th><th data-sort="emissions">CO2 Emissions</th><th data-sort="capita">Emissions per capita</th></tr>';
+              for (var i = 0; i < response.length; i++) {
+                table += '<tr><td>' + response[i][0] + '</td><td>' + response[i][1] + '</td><td>' + response[i][2] + '</td></tr>';
+              }
+              table += '</table>';
+              $(".resultTable").html(table);
+            },
+            error: function(xhr, status, error) {
+              console.log('Error: ' + error);
+            }
+          });
+        }
+  
+        // Event delegation for sorting
+        $('.resultTable').on('click', 'th', function() {
+          var gas = $("#gas_select").val();
+          var year = $("#year_select").val();
+          var sort_key = $(this).data('sort');
+          loadTable(gas, year, sort_key);
+        });
+      });
+    </script>
+</body>
+</html>

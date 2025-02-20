@@ -1,0 +1,86 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.header h1 {
+    margin: 0;
+    color: #007bff;
+}
+
+/* Section Styles */
+.section {
+    padding: 20px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    color: #343a40;
+    margin-top: 0;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f1f1f1;
+     text-align: center;
+      padding: 10px 0; 
+      position: fixed; 
+      width: 100%; bottom: 0; 
+    } 
+    .footer a { 
+        color: #0073e6; 
+        text-decoration: none; 
+        margin: 0 10px; 
+    } 
+    .footer a:hover { 
+        text-decoration: underline;
+    }
+.footer img {
+     width: 30px; /* or your desired width */ 
+     height: auto; /* maintains the aspect ratio */ 
+    }
+

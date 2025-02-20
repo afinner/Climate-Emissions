@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #211238, #3b7dd8); /* Gradient background */
+    color: #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #3b7dd8;
+    border-radius: 4px;
+    transform: scale(1.1);
+}
+
+.main {
+    padding: 20px;
+    max-width: 1500px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s, transform 0.3s;
+}
+
+h1:hover {
+    color: #483d8b;
+    transform: scale(1.05);
+}
+
+h2, h3 {
+    margin: 20px 0;
+    text-align: center;
+    color: #211238;
+    transition: color 0.3s, transform 0.3s;
+}
+
+h2, h3:hover {
+    color: #483d8b;
+    transform: scale(1.05);
+}
+
+p {
+    color: #555;
+    margin: 0 20px;
+    line-height: 1.6;
+}
+
+.wrapper {
+    margin: 20px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.links a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.links a:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer img {
+    vertical-align: middle;
+    width: 20px;
+}
+.filters, .instructions, .project-details, .data-collection, .data-processing, .data-visualization, .data-analysis {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    margin-right: 10px;
+}
+
+.select {
+    margin: 0 10px;
+}
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin-top: 20px;
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.resultTable {
+    max-height: 600px; /* Limit the height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%;
+    overflow-x: auto;
+    font-size: 1rem; /* Scalable font size */
+    display: block;
+    max-width: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.resultTable table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.resultTable th, .resultTable td {
+    font-size: 1rem; /* Scalable font size */
+    word-wrap: break-word;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.resultTable th {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.resultTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.resultComment, .resultSector {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}

@@ -1,0 +1,92 @@
+html {
+  height: 100%;
+  width: 100%;
+
+}
+body {
+  background-color: lightgoldenrodyellow;
+}
+h1 {
+  color: purple;
+  font-size: 24px;
+  background-color: white;
+  border: 3px solid black;
+  text-align: center
+
+}
+h3{
+  color: purple;
+  font-size: 19px;
+  background-color: white;
+  border: 3px solid black;
+  text-align: center
+}
+
+.style1 {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px
+
+}
+
+.navbar {
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px
+}
+h4{
+  color: purple;
+  font-size: 15px;
+  background-color: white;
+  border: 3px solid black;
+  text-align: center
+}
+ul1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li1 {
+  float: left;
+}
+
+li1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li1 a:hover:not(.active) {
+  background-color: #111;
+}
+img {
+  width: 100%;
+  height: 50%;
+}
+.dataGraphs {
+    display: none;
+}
+.dataGraphs:target {
+    display: block;
+}
+.pictures {
+  display: flex;
+}
+.side-by-side {
+  width: 50%;
+  float: left;
+  height: 20%;
+  
+}
