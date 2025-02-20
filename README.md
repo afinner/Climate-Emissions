@@ -22,22 +22,23 @@ This project aims to analyze climate emissions data of various countries in the 
 - **Matplotlib/Plotly**: For dynamic graphical representations.
 
 ## File Structure
-eu-climate-emissions/  
-│  
-├── data/  
-│   ├── raw/                    # Raw CSV files  
-│   └── cleaned/                # Cleaned CSV files  
+eu-climate-emissions/   
 │  
 ├── templates/                  # HTML templates for Flask  
 │
 ├── static/  
-│   ├── css/                      # CSS files  
+│   ├── css/                     # CSS files   
 │   └── js/                      # JavaScript files  
+│  
+├── data.csv                     # csv file for each countries data 
 │  
 ├── app.py                       # Flask application  
 ├── config.py                    # Configuration file for database credentials  
-├── data_processing.py           # Script for downloading and cleaning data  
-├── requirements.txt             # List of required Python packages  
+├── load_tables.py               # Script for downloading and cleaning data   
+├── load_database.py             # Script for sending data to database  
+├── queries.py                   # Script for querying database  
+├── graphs_advanced.py           # Script for generating dynamic graphs  
+<>├── requirements.txt             # List of required Python packages  
 └── README.md                    # Project README file  
 
 ## Getting Started
