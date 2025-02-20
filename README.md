@@ -31,9 +31,9 @@ eu-climate-emissions/
 ├── templates/                  # HTML templates for Flask  
 │
 ├── static/  
-│   ├── css/                     # CSS files  
+│   ├── css/                      # CSS files  
 │   └── js/                      # JavaScript files  
-│
+│  
 ├── app.py                       # Flask application  
 ├── config.py                    # Configuration file for database credentials  
 ├── data_processing.py           # Script for downloading and cleaning data  
