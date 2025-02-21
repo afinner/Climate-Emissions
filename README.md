@@ -38,7 +38,7 @@ eu-climate-emissions/
 ├── load_database.py             # Script for sending data to database  
 ├── queries.py                   # Script for querying database  
 ├── graphs_advanced.py           # Script for generating dynamic graphs  
-'''<  ( ├── requirements.txt             # List of required Python packages  )  >  '''
+<!--- ├── requirements.txt             # List of required Python packages --->  
 └── README.md                    # Project README file  
 
 ## Getting Started
