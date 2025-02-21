@@ -49,7 +49,7 @@ eu-climate-emissions/
 - Pandas
 - Matplotlib/Plotly
 
-### Installation
+<!--- ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/eu-climate-emissions.git
+   git clone https://github.com/your-username/eu-climate-emissions.git --->
